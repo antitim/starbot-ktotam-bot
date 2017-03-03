@@ -1,6 +1,35 @@
 # starbot-ktotam-bot [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
-## Лицензия
+## About
+
+Autoresponder Bot Control module for [StarBot](https://github.com/antitim/starbot)
+
+## Installation
+
+```sh
+$ npm install --save starbot-ktotam-bot
+```
+
+## Options
+
+```js
+const bot = new Starbot({
+  ...
+  bot: './testBot'
+  ...
+});
+```
+
+testBot.json
+```json
+{
+  "botControl": "starbot-ktotam-bot",
+  "message": "Hello"
+}
+```
+
+
+## License
 
 MIT © [antitim](http://vk.com/antitim)
 

@@ -2,7 +2,7 @@
 
 module.exports = function (bot, store) {
   /**
-   * Бот автоответчик
+   * Bot autoresponder
    */
   let text = bot.message;
 
