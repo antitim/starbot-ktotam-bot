@@ -1,11 +1,10 @@
 {
   "name": "starbot-ktotam-bot",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Kto-tam bot for Starbot",
   "author": {
     "name": "antitim",
-    "email": "antitim@yandex.ru",
-    "url": ""
+    "email": "antitim@yandex.ru"
   },
   "main": "index.js",
   "keywords": [

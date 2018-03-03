@@ -1,15 +1,12 @@
-'use strict';
+const EventEmitter = require('events');
 
-module.exports = function (bot, store) {
-  /**
-   * Bot autoresponder
-   */
-  let text = bot.message;
+class KtotamBot extends EventEmitter {
+  message (message) {
+    this.emit('message', {
+      client: message.client,
+      text: 'Кто там?'
+    })
+  }
+}
 
-  return async function (userId, message) {
-    return {
-      userId,
-      text
-    };
-  };
-};
+module.exports = KtotamBot;
