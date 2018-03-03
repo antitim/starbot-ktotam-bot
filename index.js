@@ -5,7 +5,7 @@ class KtotamBot extends EventEmitter {
     this.emit('message', {
       client: message.client,
       text: 'Кто там?'
-    })
+    });
   }
 }
 
