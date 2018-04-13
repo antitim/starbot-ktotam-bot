@@ -1,15 +1,19 @@
-'use strict';
+const EventEmitter = require('events');
 
-module.exports = function (bot, store) {
-  /**
-   * Bot autoresponder
-   */
-  let text = bot.message;
+class KtotamBot extends EventEmitter {
+  constructor (settings) {
+    super(settings);
 
-  return async function (userId, message) {
-    return {
-      userId,
-      text
-    };
-  };
-};
+    if (!settings.message) throw new Error('Not specified "message" in settings');
+
+    this.settings = settings;
+  }
+  message (message) {
+    this.emit('message', {
+      client: message.client,
+      text: this.settings.message,
+    });
+  }
+}
+
+module.exports = KtotamBot;

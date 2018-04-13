@@ -13,19 +13,10 @@ $ npm install --save starbot-ktotam-bot
 ## Options
 
 ```js
-const bot = new Starbot({
-  ...
-  bot: './testBot'
-  ...
+const KtotamBot = require('starbot-ktotam-bot');
+const bot = new KtotamBot({
+  message: 'Hello'
 });
-```
-
-testBot.json
-```json
-{
-  "botControl": "starbot-ktotam-bot",
-  "message": "Hello"
-}
 ```
 
 

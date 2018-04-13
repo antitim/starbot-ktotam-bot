@@ -1,19 +1,36 @@
-'use strict';
-
 require('chai').should();
-
-const botScript = require('./test');
 const KtotamBot = require('..');
-const bot = KtotamBot(botScript);
+
+const bot = new KtotamBot({
+  message: 'Кто там?'
+});
 
 describe('ktotam-bot', () => {
   it('greeting', async () => {
-    let answer = await bot('userId', 'Привет, Бот');
-    answer.text.should.equal('Кто там?');
+    bot.on('message', (data) => {
+      data.should.deep.equal({
+        client: 'userId',
+        text: 'Кто там?'
+      });
+    });
+
+    bot.message({
+      client: 'userId',
+      text: 'Привет'
+    });
   });
   
   it('myname', async () => {
-    let answer = await bot('userId', 'Это я, почтальон Печкин');
-    answer.text.should.equal('Кто там?');
+    bot.on('message', (data) => {
+      data.should.deep.equal({
+        client: 'userId',
+        text: 'Кто там?'
+      });
+    });
+
+    bot.message({
+      client: 'userId',
+      text: 'Это я, почтальон Печкин'
+    });
   });
 });
